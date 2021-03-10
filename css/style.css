@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+}
+#emp-form{
+    max-width:350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+.form-group > *{
+    margin-bottom: 7px;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.fas{
+    color:grey;
+}
+
+#adrimg{
+    width:40px;
+    height: 10px;
+}
+
+.progress{
+    display: flex;
+    height:50px;
+    background: transparent;
+   
+}
+
+#personal{
+    margin-right: 15px;
+    
+    width:170px;
+}
+#contact{
+    
+    width:170px;
+}
+
+#grp2{
+    display:none;
+}
+
+#tel2{
+    width:320px;
+    height:40px;
+}
+#remove{
+    display:flex;
+}
+#mobile2{
+    display: none;
+}
+
+#extra{
+    height:150px;
+}
+
+.refrsh{
+   
+    font-size: 2em;
+    color:rgba(8, 51, 170, 0.788);
+    
+}
+#result{
+    width: 150px;
+}
+
+.req{
+    color:red;
+    font-size: smaller;
+  
+   
+}
+
+.show-data{
+    max-width: 400px;
+    margin: auto;
+    margin-top:50px;
+   
+}
+
+#pimg{
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    margin: auto;
+}
+.data{
+    display: inline-block;
+    padding-left:150px;
+    
+}
+.top{
+    text-align: center;
+}
+
+
+.flx{
+    display: flex;
+    justify-content: space-between;
+}
+#mob2{
+    display:none;
+}
+#shalf{
+    margin-top: 20px;
+}
+
+
+.show-data{
+    display: none;
+}
+
+
+
