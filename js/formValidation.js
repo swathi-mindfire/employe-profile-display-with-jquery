@@ -27,7 +27,48 @@ $(document).ready(function(){
 
     $(".req").text(" ")
 
+    var countries = ["Australia","America","Canada","India","Romainia","Russia","Switzerland",]
+      
+    var country = $("#country");
+    country.length=0;
+
+    country.options[0] = new Option('select Country', '0');
+
+    country.selectedIndex = 0;
+
+    for(var i=0; i< countries.length;i++){
+    country.options[i+1] = new Option(countries[i],countries[i]);
+    }
+
 })
+
+
+var states = new Array();
+states[0] = " ";
+states[1] = "New South Wales,Queensland,South Australia,Tasmania,Victoria,Western Australia"
+states[2] = "Alabama,Alaska,California,Colorado,Florida,Georgia, Guam, Hawaii,New Jersey,South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington";
+states[3] =  "Alberta, British Columbia, Manitoba, New Brunswick,Quebec, Saskatchewan, Yukon";
+states[4] = "Andhra Pradesh,Arunachal Pradesh,Assam,Bihar,Chhattisgarh,Goa,Gujarat,Haryana,Himachal Pradesh,Jammu and Kashmir,Jharkhand,Karnataka,Kerala,Madhya Pradesh,Maharashtra,Manipur,Meghalaya,Mizoram,Nagaland,Odisha,Punjab,Rajasthan,Sikkim,Tamil Nadu,Telangana,Tripura,Uttar Pradesh,Uttarakhand,West Bengal,Andaman and Nicobar,Chandigarh,Dadra and Nagar Haveli,Daman and Diu,Lakshadweep,Delhi,Puducherry";
+states[5]  = "Arges,Bacau,Bihor,Bistrita-Nasaud,Botosani,Braila,Brasov,Bucuresti,Buzau,Calarasi";
+states[6] = "Adygeya,Aginskiy,Buryatskiy,Altay (Gorno-Altaysk),Altayskiy";
+states[7] = "Aargau,Ausser-Rhoden,Basel-Landschaft,Basel-Stadt,Bern,Fribourg,Geneve,Glarus,Graubunden"
+$("#country").change(function(){
+ var indx = $("#country").selectedIndex;
+ var st = $("#state");
+ var s_arr = states[indx].split(",");
+ states.length= 0;
+ st.options[0] = new Option("Select State", "0");
+ var s_arr = states[indx].split(",");
+
+
+ alert(s_arr.length);
+
+ for(var i=0;i<s_arr.length;i++){
+     st.options[i+1] = new Option(s_arr[i],s_arr[i]);
+ }
+
+})
+
 
 
 function display(input){
@@ -39,8 +80,8 @@ function display(input){
  if(file){
  var reader = new FileReader();
 
- alert(reader.result)
- alert(reader)
+ //alert(reader.result)
+ //alert(reader)
 
  reader.onload = function(){
      $("#pimg").attr("src", reader.result);
@@ -135,7 +176,7 @@ function groupOneCheck(){
     var mobile = $("#tel").val();
     var pan = $("#pan").val();
     var adhar = $("#adhar").val();
-    var namereg = /^[a-zA-Z]+$/;
+    var namereg = /^[a-zA-Z \s]+$/;
     var mailreg = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-zA-Z]{2,7})(.[a-z]{2,7})?$/;
     var mobilereg = /^[1-9]{1}[0-9]{9}$/;
     var adharreg = /^[1-9]{1}[0-9]{11}$/;
@@ -263,25 +304,16 @@ function groupOneCheck(){
     
 
 }
-$('#country').select(function(){
-    if(this.val()=="In"){
-        $('#state').append('<option value="AU"> Arunachal Pradesh</option>');
-        $('#state').append('<option value="K"> Kerala</option>');
-        $('#state').append('<option value="MP"> MadyaPradesh</option>'); 
- 
-
-
-    }
-})
 
 $('#result').change( function(){
     var expr = $('#exprsn').val();
     var result = $('#result').val()
-    temp =Math.round(eval(expr))
+    temp = Math.round(eval(expr))
+    alert(temp)
     if (result == ""){
         $('#errormsg').text("Please Enter captcha result");
     }
-    else if (temp != result){
+    else if (temp!= result){
             
             $('#errormsg').text("Wrong Captcha Result");
         }
