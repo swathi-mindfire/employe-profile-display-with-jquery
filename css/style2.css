@@ -27,8 +27,11 @@
 *{
     box-sizing: border-box;
 }
-body{
-    background-image: url("images/bg.png");
+
+
+#grp3>*{
+    background: linear-gradient(#C6FFDD ,#FBD786,#f7797d);
+    
 }
 .myform{
     max-width:500px;
@@ -69,7 +72,7 @@ label::after{
 #optional-num,#optional-address{
     display:none;
 }
-#address2 label::after{
+#addaddress2 label::after{
     content:"";
 }
 
@@ -82,8 +85,7 @@ label::after{
     color:rgba(8, 51, 170, 0.788);    
 }
 
-
-#grp1,#grp2{
+#grp3,#grp2{
     display: none;
 }
 #captcha-error{
@@ -102,6 +104,8 @@ label::after{
     height:200px;
     border-radius: 50%;
     margin: auto;
+    padding-top: 20px;
+    
 }
 .data{
     display: inline-block;
@@ -131,5 +135,19 @@ label::after{
 }
 #grp3{
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    position: relative;
+    top:-20px;
+  
+  
 }
+#extra-number{
+    display: none;
+}
+#extra-address{
+    display: none;
+}
+#head2{
+    display: none;
+}
+
 

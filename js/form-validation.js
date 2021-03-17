@@ -1,9 +1,18 @@
 $(document).ready(function(){
-    const req=$(".req");
-    const countries = ["Australia","America","Canada","India","Romainia","Russia","Switzerland",]
-     
-    const next=$('#next')
+    const req                     =   $(".req");
+    const countries               =   ["Australia","America","Canada","India","Romainia","Russia","Switzerland",]    
+    const next                    =   $('#next');
+    const contact                 =   $("#contact");
+    const personal                =   $("#personal");
+    const grp1                    =   $("#grp1");
+    const grp2                    =   $("#grp2");
+    const grp3                    =   $("#grp3");
+    const optionalNum             =   $("#optional-num")
+    const optionalAddress         =   $("#optional-address")
+    const addMobile               =   $("#add-mob2")
+    const addAddr2                =    $("#add-aadr2")   
     req.text("")
+   //created IIEF  
     formValidation = (function(){
        const profile           =    $("#profile");
        const name              =    $("#name");
@@ -49,8 +58,7 @@ $(document).ready(function(){
        states[5]               =    "Alba,Arad,Arges,Bacau,Bihor,Bistrita-Nasaud,Botosani,Braila,Brasov,Bucuresti,Buzau,Calarasi,Caras-Severin,Cluj,Constanta,Covasna,Dimbovita,Dolj,Galati,Giurgiu,Gorj,Harghita,Hunedoara,Ialomita";
        states[6]               =    "Adygeya,Aginskiy Buryatskiy,Altay,Altayskiy,Amurskaya,Arkhangel'skaya,Astrakhanskaya,Bashkortostan,Belgorodskaya,Bryanskaya,Buryatiya,Chechnya,Chelyabinskaya,Chitinskaya,Chukotskiy";
        states[7]               =    "Aargau,Ausser-Rhoden,Basel-Landschaft,Basel-Stadt,Bern,Fribourg,Geneve,Glarus,Graubunden,Inner-Rhoden,Jura,Luzern,Neuchatel"
-       var fnflag,mlflag,m1flag,panflag,adharflag,profileflag,addressflag,countryflag,
-           stateflag,cityflag,captchaflag,zipflag;
+       var fnflag,mlflag,m1flag,panflag,adharflag,profileflag,addressflag,countryflag,stateflag,cityflag,captchaflag,zipflag;
        //Handling blur event
        function noInputHandle(ipId){
            ip = $("#" + ipId)
@@ -59,9 +67,7 @@ $(document).ready(function(){
             }
             else{
                 ip.next().text("");
-
-            }
-           
+            }           
         }
         //Name field validation
             function validateName(){
@@ -214,6 +220,8 @@ $(document).ready(function(){
                 if(fnflag && panflag && adharflag && mlflag && m1flag && profileflag){
                     grp1.fadeOut(4000, function(){
                         grp2.show()
+                        $('#personal').removeClass("btn-primary").addClass("btn-secondary");    
+                        $('#contact').removeClass("btn-secondary").addClass("btn-primary");
                     });
 
 
@@ -363,16 +371,18 @@ $(document).ready(function(){
             }
             function employeeDataDisplay(){
                 $('#sname').text(name.val());
-                $('#sname').css("text-transform","capitalize")
+                $('#sname').css("text-transform","capitalize");
                 $('#smob').text(tel.val());
-                if(!($('#tel2').val() == " ")){
-                    var m2=$('#tel2').val();
+                const extraNumber  =  $("#extra-number");
+                const tel2   =  $('#tel2');
+                if(!(tel2.val() == "")){
+                    var m2=tel2 .val();
                     $('#smob2').text(m2);
-                    $('#mob2').css("display","block")
+                    extraNumber.css("display","block")
 
                 }
                 else{
-                    $('#extra-number').css("display","none")
+                    extraNumber.css("display","none")
 
                 }
 
@@ -388,19 +398,27 @@ $(document).ready(function(){
                 $('#sstate').text(cstate.val());
                 $('#szip').text(zip.val());
                 $('#saddr').text(caddress.val());
+                const extraAddress =  $("#extra-address");
+                const address2     =  $('#address2')
+
+                if(!(address2.val() == "")){
+                    var m2 = address2 .val();
+                    $('#saddr2').text(m2);
+                    extraAddress.css("display","block")
+
+                }
+                else{
+                    extraAddress.css("display","none")
+
+                }
+                $("#head2").css("display","block");
 
 
                 $('#grp2').css("display","none");
                 $("#nav").css("display","none");
                 $("#head").css("display","none");
                 $('#grp3').css("display","block");
-                $('body').css("background","blue")
-                
-
-                
-                
-
-
+            
             }
             function nameValidation(){
                 validateName();
@@ -511,9 +529,10 @@ $("input").blur(function(){
     
 })
 
-$("#country").change(
+$("#country").change(function(){
     fv.generateStates()
-)
+
+})
 function grp1FieldsCheck(){
     fv.profileValidation()   
     fv.nameValidation();
@@ -526,7 +545,7 @@ function grp1FieldsCheck(){
     fv.generateCaptcha();
     
 }
-$("#next").click(function(){
+next.click(function(){
     
     grp1FieldsCheck()
     
@@ -576,23 +595,32 @@ $("#refresh").click(function(){
 
 })
 $('#enum').click(function(){
-    $("#optional-num").css("display","block");
-    $("#addmobile").css("display","none")
+    optionalNum.css("display","block");
+    addMobile.css("display","none")
 })
 $('#remove-num').click(function(){
-    $("#optional-num").css("display","none");
-    $("#addmobile").css("display","block")
+    optionalNum.css("display","none");
+    addMobile.css("display","block")
     $("#tel2").val(" ")
 })
-$("#contact").click(function(){
+$('#eaddr').click(function(){
+    optionalAddress.css("display","block");
+    addAddr2.css("display","none")
+})
+$('#remove-address').click(function(){
+    optionalAddress.css("display","none");
+    addAddr2.css("display","block")
+    $("#addr2").val(" ")
+})
+contact.click(function(){
     grp1FieldsCheck();
 
 })
-$('#personal').click(function(){
-    $('#grp2').fadeOut(3000);
-    $('#grp1').delay(2000).fadeIn();
-    $('#contact').removeClass("btn-primary").addClass("btn-secondary");    
-    $('#personal').removeClass("btn-secondary").addClass("btn-primary");    
+personal.click(function(){
+    grp2.fadeOut(3000);
+    grp1.delay(2000).fadeIn();
+    contact.removeClass("btn-primary").addClass("btn-secondary");    
+    personal.removeClass("btn-secondary").addClass("btn-primary");    
 })
 
 
