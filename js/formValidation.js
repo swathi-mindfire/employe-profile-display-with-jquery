@@ -28,46 +28,46 @@ $(document).ready(function(){
     $(".req").text(" ")
 
     var countries = ["Australia","America","Canada","India","Romainia","Russia","Switzerland",]
-      
-    var country = $("#country");
-    country.length=0;
-
-    country.options[0] = new Option('select Country', '0');
-
-    country.selectedIndex = 0;
-
-    for(var i=0; i< countries.length;i++){
-    country.options[i+1] = new Option(countries[i],countries[i]);
-    }
+            var country1 = document.getElementById("country");
+           
+            country1.options[0] = new Option('select Country', '0');
+          
+            country1.selectedIndex = 0;
+ 
+            for(var i=0; i< countries.length; i++){
+               country1.options[i+1] = new Option(countries[i],countries[i]);
+               
+            }
+            var states = new Array();
+            states[0] = "slelct state";
+            states[1] = "Australian Capital Territory,New South Wales,Northern Territory,Queensland,South Australia,Tasmania,Victoria,Western Australia";
+            states[2] =  "Alabama.Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,District of Columbia,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,tah,Vermont,Virginia,Washington,WestVirginia,Wisconsin,Wyoming";
+            states[3] =  "Alberta,British Columbia,Manitoba,New Brunswick,Newfoundland,Northwest Territories,Nova Scotia,Nunavut,Ontario,Prince Edward Island,Quebec,Saskatchewan,Yukon Territory";
+            states[4] = "Andhra Pradesh,Arunachal Pradesh,Assam,Bihar,Chhattisgarh,Goa,Gujarat,Haryana,Himachal Pradesh,Jammu and Kashmir,Jharkhand,Karnataka,Kerala,Madhya Pradesh,Maharashtra,Manipur,Meghalaya,Mizoram,Nagaland,Odisha,Punjab,Rajasthan,Sikkim,Tamil Nadu,Telangana,Tripura,Uttar Pradesh,Uttarakhand,West Bengal,Andaman and Nicobar,Chandigarh,Dadra and Nagar Haveli,Daman and Diu,Lakshadweep,Delhi,Puducherry"
+            states[5]  = "Alba,Arad,Arges,Bacau,Bihor,Bistrita-Nasaud,Botosani,Braila,Brasov,Bucuresti,Buzau,Calarasi,Caras-Severin,Cluj,Constanta,Covasna,Dimbovita,Dolj,Galati,Giurgiu,Gorj,Harghita,Hunedoara,Ialomita";
+            states[6] = "Adygeya,Aginskiy Buryatskiy,Altay,Altayskiy,Amurskaya,Arkhangel'skaya,Astrakhanskaya,Bashkortostan,Belgorodskaya,Bryanskaya,Buryatiya,Chechnya,Chelyabinskaya,Chitinskaya,Chukotskiy";
+            states[7] = "Aargau,Ausser-Rhoden,Basel-Landschaft,Basel-Stadt,Bern,Fribourg,Geneve,Glarus,Graubunden,Inner-Rhoden,Jura,Luzern,Neuchatel"
+            
+            $("#country").change(function(){
+               
+                   
+                    var indx = document.getElementById("country").selectedIndex;
+                    
+                    var st = document.getElementById("state");
+                    var s_arr = states[indx].split(",");
+                    st.options[0] = new Option('Select State', '0');
+                    var s_arr = states[indx].split(",");
+            
+                    for(var i=0;i<s_arr.length;i++){
+                        st.options[i+1] = new Option(s_arr[i],s_arr[i]);
+                    }
+                
+             
+            })
+            
 
 })
 
-
-var states = new Array();
-states[0] = " ";
-states[1] = "New South Wales,Queensland,South Australia,Tasmania,Victoria,Western Australia"
-states[2] = "Alabama,Alaska,California,Colorado,Florida,Georgia, Guam, Hawaii,New Jersey,South Carolina, South Dakota, Tennessee, Texas, U.S. Virgin Islands, Utah, Vermont, Virginia, Washington";
-states[3] =  "Alberta, British Columbia, Manitoba, New Brunswick,Quebec, Saskatchewan, Yukon";
-states[4] = "Andhra Pradesh,Arunachal Pradesh,Assam,Bihar,Chhattisgarh,Goa,Gujarat,Haryana,Himachal Pradesh,Jammu and Kashmir,Jharkhand,Karnataka,Kerala,Madhya Pradesh,Maharashtra,Manipur,Meghalaya,Mizoram,Nagaland,Odisha,Punjab,Rajasthan,Sikkim,Tamil Nadu,Telangana,Tripura,Uttar Pradesh,Uttarakhand,West Bengal,Andaman and Nicobar,Chandigarh,Dadra and Nagar Haveli,Daman and Diu,Lakshadweep,Delhi,Puducherry";
-states[5]  = "Arges,Bacau,Bihor,Bistrita-Nasaud,Botosani,Braila,Brasov,Bucuresti,Buzau,Calarasi";
-states[6] = "Adygeya,Aginskiy,Buryatskiy,Altay (Gorno-Altaysk),Altayskiy";
-states[7] = "Aargau,Ausser-Rhoden,Basel-Landschaft,Basel-Stadt,Bern,Fribourg,Geneve,Glarus,Graubunden"
-$("#country").change(function(){
- var indx = $("#country").selectedIndex;
- var st = $("#state");
- var s_arr = states[indx].split(",");
- states.length= 0;
- st.options[0] = new Option("Select State", "0");
- var s_arr = states[indx].split(",");
-
-
- alert(s_arr.length);
-
- for(var i=0;i<s_arr.length;i++){
-     st.options[i+1] = new Option(s_arr[i],s_arr[i]);
- }
-
-})
 
 
 

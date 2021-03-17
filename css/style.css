@@ -115,6 +115,13 @@
 .show-data{
     display: none;
 }
+/*#grp1{
+    display: none;
+}*/
+
+#grp2{
+    display: block;
+}
 
 
 

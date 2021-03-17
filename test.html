@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootsrap forms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center text-primary mt-2" id="head">Employee Profile Form</h2>
+        <form action="" class="container myform">
+            <div class="row pt-4" id="nav">
+                <div class="col-md-12 d-flex justify-content-around">
+                    <button type="button" class="btn btn-primary p-2 m-2 status" id="personal">Personal Details</button>
+                    <button type="button" class="btn btn-secondary p-2 m-2 status" id="contact">Contact Details</button>
+                </div>
+            </div>  
+            <div id="grp1">
+                <div class="form-group row mt-2">
+                    <div class="col-sm-10 mx-auto">
+                        <i class="fas fa-user-circle"></i>
+                        <label for="profile">Upload profile</label>
+                        <input type="file" accept="image/*"  capture class="form-control " id="profile"class="ip">
+                        <span class= "profilereq req" id="profileerror">*</span>
+                    </div>
+                </div>
+                <div class="row form-group mt-2">
+                    <div class="col-sm-10 mx-auto">
+                        <i class="far fa-user"></i>
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control ip" id="name">
+                        <span class= "fnamereq req" id="fnerror">*</span>
+                    </div>
+                </div>
+                <div class="row form-group mt-2">
+                    <div class="col-sm-10 mx-auto">
+                        <i class="fas fa-envelope"></i>
+                        <label for="mail1">Email address:</label>
+                        <input type="email" class="form-control ip" id="mail1">
+                        <span class= "mailreq req" id="mlerror">*</span>
+                      </div>
+                </div>
+                <div class="row form-group mt-2">
+                    <div class="col-sm-10 mx-auto form-group" id="mobile1">
+                        <i class="fas fa-phone-alt"></i>
+                       <label for="tel">Phone Number</label>
+                       <input type="tel" class="form-control ip" id="tel">
+                       <span class= "m1req req" id="m1error">*</span>
+                     </div>
+                </div>
+                
+                <div class="row form-group mt-2" id="add-mob2">
+                    <div class="form-group col-sm-10 mx-auto" id="addmobile">
+                        <button  type="button" id="enum"class="add_form_field btn btn-outline-secondary">
+                        <i class="fas fa-plus"></i>Add Second Number</button>
+                      </div>
+                </div>
+                <div id="optional-num">
+                    <div class="row form-group mt-2">
+                        <div class="col-sm-10 mx-auto" id="mobile2">
+                            <i class="fas fa-phone-alt"></i>
+                        <label for="tel">Second Number</label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-10 mx-auto d-flex">
+                            <input type="tel" class="form-control ip" id="tel2">
+                            <button type="button" class="btn" id="remove-num"><i class="fas fa-times-circle fa-2x" id=" cross"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mt-3">
+                    <div class="col-sm-10 form-group mx-auto" id="panplace">
+                        <i class="fa fa-credit-card" ></i>
+                        <label for="pan">PAN Number</label>
+                        <input type="text" class="form-control ip" id="pan">
+                        <span class= "panreq req" id="panerror">*</span>
+                    </div>
+                </div>
+                <div class="row form-group mt-2">
+                    <div class="col-sm-10  mx-auto form-group">
+                        <i class="fa fa-credit-card" ></i>            
+                        <label for="adhar">Adhar Number</label>
+                        <input type="text" class="form-control" id="adhar">
+                        <span class= "adharreq req" id="adharerror">*</span>
+                      </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-10 mx-auto">
+                        <button type="button" class="btn btn-primary form-control" id="next" >Next</button>
+        
+                    </div>
+                </div>
+            
+            </div>
+            <div id="grp2">
+                <div class="row mt-2">
+                    <div class="col-sm-10 form-group mx-auto">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <label for="address">Address</label>
+                        <textarea class="form-control ip" id="address" rows="3"></textarea>
+                        <span class= "a1req req" id="a1error">*</span>
+                      </div>
+                </div>
+                <div class="row form-group mt-2" id="add-addr2">
+                    <div class="form-group col-sm-10 mx-auto" id="addaddress">
+                        <button  type="button" id="eaddr"class="add_form_field btn btn-outline-secondary">
+                        <i class="fas fa-plus"></i>Add Second Address</button>
+                      </div>
+                </div>
+                <div id="optional-address">
+                    <div class="row form-group mt-2">
+                        <div class="col-sm-10 mx-auto" id="address2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <label for="tel">Address2</label>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-10 mx-auto d-flex">
+                            <textarea class="form-control ip" id="address2" rows="3"></textarea>
+                            <button type="button" class="btn" id="remove-address"><i class="fas fa-times-circle fa-2x" id=" cross"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-10 mx-auto form-group">
+                        <i class="fas fa-city"></i>
+                        <label for="name">City Name</label>
+                        <input type="text" class="form-control ip" id="city">
+                        <span class= "c1req req" id="cterror">*</span>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="form-group col-sm-10 mx-auto">
+                        <label for="country"> country</label>
+                        <select id="country" class="form-control ip" data-role="select-dropdown"></select>
+                        <span class= "country1req req" id="c1error">*</span>
+                      </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="form-group col-sm-10 mx-auto">
+                        <label for="state">State</label>
+                          <select id="state" class="form-control ip" data-role="select-dropdown"></select>
+                        <span class= "state1req req" id="s1error">*</span>
+                      </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="form-group col-sm-10 mx-auto">
+                        <label for="pincode">Zip Code</label>
+                        <input type="text" id="pincode" class="form-control">
+                        <span class= "zip1req req" id="ziperror">*</span>
+                      </div>
+                </div>
+                <div class="row captcha-row d-flex justify-content-around mt-4">
+                    <div class="col-sm-4 captcha-res">                           
+                        <input type="text" name="res" id="result" class="ip form-control ip"  placeholder="captcha Result" >
+                        <span id="captcha-error" class="captcha-req req">*</span>                   
+                    </div>
+                    <div class="col-sm-4 captcha-expr">
+                        <input type="text" name="exprsn" id="exprsn" class="ip captcha field ip form-control" readonly required>
+                    </div>
+                    <div class="col-sm-2">
+                        <button id="refresh" class="captcha field btn" type="button" > <i class="fas fa-sync-alt refrsh"></i></button> 
+                   
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-10 mx-auto">
+                        <button type="button" class="btn btn-primary form-control" id="sub" >Submit</button>
+        
+                    </div>
+                </div>
+            </div>
+            <div class="extra"></div> 
+        </form>
+         <div class="show-data" id="grp3">
+      <div class="card" >
+        <img class="card-img-top" src=""  class="rounded-circle" id="pimg" alt="user profile">
+        <div class="card-body">
+          <h5 class="card-title top"><span id="sname" class="cdata"> Mothukuri Swathi</span></h5>
+          <p class="card-text top"> <i class="fas fa-phone-alt"></i> <span id="smob" class="cdata"> 9999999999</span></p>
+        </div>
+        <ul class="list-group list-group-flush" id="shalf">
+          
+          <li class="list-group-item flx" id="extra-number">Mobile 2<span id="smob2" class="cdata">  8999999999</span></li>
+          <li class="list-group-item flx"><!--<i class="fas fa-envelope"></i>-->
+          Email <a href="mailto:someone@example.com"> <span id="smail" class="cdata data">swathi@gmail.com</span></a></li>
+          <li class="list-group-item flx">PAN Number<span id="span" class="cdata"> AAAA1234AA</span></li>
+          <li class="list-group-item flx">Adhar Number<span id="sadhar" class="cdata"> 4985898769898</span></li>
+          <li class="list-group-item flx">Address<span id="saddr" class="cdata"> 8-187,pothavaram,chavavari streeet</span></li>
+          <li class="list-group-item flx">City<span id="scity" class="cdata">Nallajerla</span></li>
+          <li class="list-group-item flx">State<span id="scountry" class="cdata">AndhraPradesh</span></li>
+          <li class="list-group-item flx">Country<span id="sstate" class="cdata">India</span></li>
+          <li class="list-group-item flx">Pincode<span id="szip" class="cdata">534176</span></li>
+        </ul>
+      </div>
+        
+    </div>
+    <div class="extra"></div> 
+
+    
+    <script src="js/form-validation.js"></script>
+    
+</body>
+</html>
